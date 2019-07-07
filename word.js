@@ -1,21 +1,26 @@
 var Letter = require('./letter.js');
 
-var gameWords = ["bugle", "compass", "campfire", "creek walking", "buddy system", "horseback riding", "insect repellent", "swimming test", "ultimate frisbee", "archery", "arts and crafts", "canteen", "infirmary", ];
-
-function Word() {
-    this.getBlanks = function(word) {
+function Word(word) {
+    this.word = word;
+    
+    this.getBlanks = function() {
         var ansWordArr = [];
         for (var i = 0; i < word.length; i++) {
-            ansWordArr[i] = "_";
+            var currentLetter = new Letter(word[i]);
+            ansWordArr.push(currentLetter);
         }
         return ansWordArr; 
-}
-    this.newLetter = new Letter(ansWordArr[i]),
+    }
+    this.letter = this.getBlanks(word);
+    this.randomWord = word;
+
     this.strRep = function() {
         Letter.correctG();
 
     }
-    this.checkWord = function(guess) {
+    this.checkWord = function(letter) {
         Letter.checkG();
     }
 };
+
+module.exports = Word;

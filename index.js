@@ -1,5 +1,7 @@
 var Word = require('./word.js');
 
+var gameWords = ["bugle", "compass", "campfire", "creek walking", "buddy system", "horseback riding", "insect repellent", "swimming test", "ultimate frisbee", "archery", "arts and crafts", "canteen", "infirmary"];
+
 function randomWord(gameWords) {
     var randomIndex;
     randomIndex = Math.floor(Math.random() * gameWords.length);

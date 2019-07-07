@@ -1,25 +1,28 @@
 
-
-function Letter(underscore, unChar, guess, hasBeen) {
+function Letter(letter) {
     this.underscore = "_",
-    this.unChar = unChar,
-    this.guess = guess,
+    this.letter = letter,
     this.hasBeen = false,
-    this.correctG = function() {
-        if(this.guess === this.unChar) {
-            this.hasBeen === true;
-
+    this.toString = function() {
+        if(this.letter === " ") {
+            this.hasBeen = true;
+            return " ";
         }
         else {
+            if (this.hasBeen === false) {
             return this.underscore;
+            }
+            else {
+                return this.letter;
+            }
         }
-    }
-    this.checkG = function(guess) {
-        if(this.guess === this.unChar) {
-            this.hasBeen === true;
+    };
+    this.checkG = function(checkG) {
+        if(checkG === this.letter) {
+            this.hasBeen = true;
         }
         else {
-            this.hasBeen === false;
+            this.hasBeen = false;
         }
     }
 };
