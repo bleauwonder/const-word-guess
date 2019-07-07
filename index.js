@@ -1,3 +1,4 @@
+var inquirer = require('inquirer');
 var Word = require('./word.js');
 
 var gameWords = ["bugle", "compass", "campfire", "creek walking", "buddy system", "horseback riding", "insect repellent", "swimming test", "ultimate frisbee", "archery", "arts and crafts", "canteen", "infirmary"];
@@ -16,3 +17,6 @@ var isCorrectGuess = function(word, letter) {
     }
     return false;
 }
+
+randomWord();
+isCorrectGuess();

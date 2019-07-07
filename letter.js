@@ -4,25 +4,21 @@ function Letter(letter) {
     this.letter = letter,
     this.hasBeen = false,
     this.toString = function() {
-        if(this.letter === " ") {
+        if(this.letter === true) {
             this.hasBeen = true;
-            return " ";
+            return this.letter;
         }
         else {
-            if (this.hasBeen === false) {
             return this.underscore;
-            }
-            else {
-                return this.letter;
-            }
         }
     };
+
     this.checkG = function(checkG) {
         if(checkG === this.letter) {
             this.hasBeen = true;
         }
         else {
-            this.hasBeen = false;
+            return false;
         }
     }
 };

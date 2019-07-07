@@ -1,7 +1,6 @@
 var Letter = require('./letter.js');
 
 function Word(word) {
-    this.word = word;
     
     this.getBlanks = function() {
         var ansWordArr = [];
@@ -11,15 +10,25 @@ function Word(word) {
         }
         return ansWordArr; 
     }
-    this.letter = this.getBlanks(word);
-    this.randomWord = word;
+    this.word = this.getBlanks(word);
 
     this.strRep = function() {
-        Letter.correctG();
-
+        // Letter.correctG();
+        var curWord = " ";
+        for (var i = 0; i < this.word.length; i++) {
+            var curLetter = this.word[i];
+            curWord += curLetter.strRep() + " ";
+        }
+        console.log(curWord);
     }
     this.checkWord = function(letter) {
-        Letter.checkG();
+        // Letter.checkG();
+        for (var i = 0; i < this.word.length; i++) {
+            var curLetter = this.word[i];
+            console.log(curLetter);
+            curLetter.checkG(letter);
+        }
+        return this.strRep;
     }
 };
 
