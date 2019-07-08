@@ -21,6 +21,7 @@ function Word(word) {
         }
         console.log(curWord);
     }
+    
     this.checkWord = function(letter) {
         // Letter.checkG();
         for (var i = 0; i < this.word.length; i++) {

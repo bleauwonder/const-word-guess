@@ -7,23 +7,28 @@ var gLtr = [];
 
 var gameWords = ["bugle", "compass", "campfire", "creek walking", "buddy system", "horseback riding", "insect repellent", "swimming test", "ultimate frisbee", "archery", "arts and crafts", "canteen", "infirmary"];
 
-function randomWord(gameWords) {
+var randomWord = function (gameWords) {
     var randomIndex;
     randomIndex = Math.floor(Math.random() * gameWords.length);
+    console.log(gameWords[randomIndex]);
     return gameWords[randomIndex];
 }
-// Is it the correct guess?
-var isCorrectGuess = function(word, letter) {
-    for (var i = 0; i <= word.length; i++) {
-    if (word[i].hasBeen && word[i] === letter) {
-        return true;
-     } 
-    }
-    return false;
-}
 
-randomWord();
-isCorrectGuess();
+// Is it the correct guess?
+// var isCorrectGuess = function(word, letter) {
+//     var word = Word.word;
+//     var letter = Letter.letter;
+//     for (var i = 0; i <= word.length; i++) {
+//     if (word[i].hasBeen && word[i] === letter) {
+//         return true;
+//      } 
+//     }
+//     return false;
+// }
+
+randomWord(gameWords);
+
+// isCorrectGuess(randomWord, letter);
 
 inquirer
     .prompt([
@@ -33,9 +38,9 @@ inquirer
             message: 'Guess a letter!'
         }
     ]).then(function(user) {
-        currentWord.checkG(user.hasBeen);
-        currentWord.strRep();
-        if(currentWord.checkG(user.hasBeen)){
+        Letter.checkG(user.hasBeen);
+        Word.strRep();
+        if(Word.checkG(user.hasBeen)){
                 console.log("Correct!!");
         }
         else{
@@ -43,5 +48,5 @@ inquirer
             console.log("Incorrect! You have " + remainingGuesses + " guesses left!");
         }
         gLtr.push(user.strRep.trim().toLowerCase());
-        
-    })
+
+    });
