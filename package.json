@@ -18,6 +18,6 @@
   "homepage": "https://github.com/bleauwonder/const-word-guess#readme",
   "dependencies": {
     "inquirer": "^6.4.1",
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.19"
   }
 }
